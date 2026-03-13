@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</ProjectGuid>
+    <MainSource>LogFacil.dpr</MainSource>
+    <Base>True</Base>
+    <Config Condition="'$(Config)'==''">Debug</Config>
+    <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    <FrameworkType>VCL</FrameworkType>
+    <ProjectVersion>19.4</ProjectVersion>
+    <AppType>Application</AppType>
+    <ProjectName>LogFacil</ProjectName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+    <DCC_E>False</DCC_E>
+    <DCC_N>False</DCC_N>
+    <DCC_S>False</DCC_S>
+    <DCC_F>False</DCC_F>
+    <DCC_K>False</DCC_K>
+    <SanitizedProjectName>LogFacil</SanitizedProjectName>
+    <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;FireDAC;$(DCC_Namespace)</DCC_Namespace>
+    <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+    <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+    <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+    <DCC_DPIAware>true</DCC_DPIAware>
+    <DCC_UsePackage>FireDACIBDriver;FireDACCommonODBC;FireDACCommonDriver;FireDACSQLiteDriver;FireDACASADriver;FireDACMSSQLDriver;FireDACOracleDriver;FireDACMySQLDriver;FireDACPgDriver;FireDACTDataDriver;FireDACADSDriver;FireDACDBXDriver;FireDACDSDriver;DBXSqliteDriver;DBXMSSQLDriver;IndySystem;IndyProtocols;IndyCore;DBXInterBaseDriver;vclimg;vclwinx;dbrtl;VCLRESTComponents;DbxCommonDriver;DataSnapProviderClient;xmlrtl;DataSnapClient;dbexpress;VclSmp;adortl;vclie;vcldb;vcl;rtl;$(DCC_UsePackage)</DCC_UsePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Debug' and '$(Platform)'=='Win32'">
+    <DCC_Define>DEBUG</DCC_Define>
+    <DCC_Optimize>False</DCC_Optimize>
+    <DCC_GenerateStackFrames>True</DCC_GenerateStackFrames>
+    <DCC_DebugInfoInExe>True</DCC_DebugInfoInExe>
+    <DCC_RemoteDebug>False</DCC_RemoteDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Release' and '$(Platform)'=='Win32'">
+    <DCC_Define>RELEASE</DCC_Define>
+    <DCC_MapFile>0</DCC_MapFile>
+    <DCC_DebugInfoInExe>False</DCC_DebugInfoInExe>
+    <DCC_Optimize>True</DCC_Optimize>
+    <DCC_GenerateStackFrames>False</DCC_GenerateStackFrames>
+    <DCC_RemoteDebug>False</DCC_RemoteDebug>
+  </PropertyGroup>
+  <ItemGroup>
+    <DelphiCompile Include="LogFacil.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="src\uDMPrincipal.pas">
+      <Form>DMPrincipal</Form>
+    </DCCReference>
+    <DCCReference Include="src\uGlobal.pas"/>
+    <DCCReference Include="src\uFrmLogin.pas">
+      <Form>FrmLogin</Form>
+    </DCCReference>
+    <DCCReference Include="src\uFrmPrincipal.pas">
+      <Form>FrmPrincipal</Form>
+    </DCCReference>
+    <DCCReference Include="src\uFrmUsuarios.pas">
+      <Form>FrmUsuarios</Form>
+    </DCCReference>
+    <DCCReference Include="src\uFrmClientes.pas">
+      <Form>FrmClientes</Form>
+    </DCCReference>
+    <DCCReference Include="src\uFrmFornecedores.pas">
+      <Form>FrmFornecedores</Form>
+    </DCCReference>
+    <DCCReference Include="src\uFrmMatPrimas.pas">
+      <Form>FrmMatPrimas</Form>
+    </DCCReference>
+    <DCCReference Include="src\uFrmProdutos.pas">
+      <Form>FrmProdutos</Form>
+    </DCCReference>
+    <DCCReference Include="src\uFrmCompras.pas">
+      <Form>FrmCompras</Form>
+    </DCCReference>
+    <DCCReference Include="src\uFrmVendas.pas">
+      <Form>FrmVendas</Form>
+    </DCCReference>
+    <DCCReference Include="src\uFrmEstoque.pas">
+      <Form>FrmEstoque</Form>
+    </DCCReference>
+    <DCCReference Include="src\uFrmAjusteEstoque.pas">
+      <Form>FrmAjusteEstoque</Form>
+    </DCCReference>
+  </ItemGroup>
+  <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+  <Import Project="$(APPDATA)\Embarcadero\Studio\22.0\EnvOptions.proj" Condition="Exists('$(APPDATA)\Embarcadero\Studio\22.0\EnvOptions.proj')"/>
+</Project>
