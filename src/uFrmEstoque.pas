@@ -106,12 +106,12 @@ begin
     sgdPosicao.Cells[6,0]:='Est.Máx';  sgdPosicao.Cells[7,0]:='Vl.Total';
     sgdPosicao.Cells[8,0]:='Situação';
   end;
-  sgdPosicao.FixedRows := 1;
+  //sgdPosicao.FixedRows := 1;
   sgdPosicao.Options := sgdPosicao.Options + [goColSizing, goRowSelect];
 
   { Grid Histórico }
   sgdHistorico.ColCount := 8;
-  sgdHistorico.FixedRows := 1;
+  //sgdHistorico.FixedRows := 1;
   sgdHistorico.Options := sgdHistorico.Options + [goColSizing, goRowSelect];
   sgdHistorico.ColWidths[0]:=130; sgdHistorico.ColWidths[1]:=30;
   sgdHistorico.ColWidths[2]:=220; sgdHistorico.ColWidths[3]:=80;

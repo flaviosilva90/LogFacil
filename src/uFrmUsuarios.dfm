@@ -81,6 +81,7 @@ object FrmUsuarios: TFrmUsuarios
     Align = alTop
     ColCount = 6
     DefaultRowHeight = 22
+    DrawingStyle = gdsGradient
     RowCount = 2
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect]
     TabOrder = 2

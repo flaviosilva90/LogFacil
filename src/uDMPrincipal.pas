@@ -1,4 +1,4 @@
-unit uDMPrincipal;
+﻿unit uDMPrincipal;
 
 {
   uDMPrincipal.pas
@@ -17,7 +17,7 @@ uses
   FireDAC.VCLUI.Wait, FireDAC.Comp.Client,
   FireDAC.Phys.FB, FireDAC.Phys.FBDef,
   FireDAC.Stan.ExprFuncs, FireDAC.Comp.UI,
-  Data.DB;
+  Data.DB, FireDAC.DApt;
 
 type
   TDMPrincipal = class(TDataModule)
@@ -184,7 +184,8 @@ function TDMPrincipal.Autenticar(const ALogin, ASenha: string): Boolean;
 var Qry: TFDQuery;
 begin
   Result := False;
-  Qry := NovaQuery;
+  Qry := TFDQuery.Create(nil);
+  Qry.Connection := Conn;
   try
     Qry.SQL.Text :=
       'SELECT ID, NOME, LOGIN, PERFIL, ATIVO ' +

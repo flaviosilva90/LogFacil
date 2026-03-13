@@ -74,7 +74,7 @@ begin
   FIDSelecionado := 0;
   { Grid lista }
   sgdLista.ColCount := 6; sgdLista.FixedRows := 1;
-  sgdLista.Options := sgdLista.Options + [goColSizing, goRowSelect];
+  //sgdLista.Options := sgdLista.Options + [goColSizing, goRowSelect];
   sgdLista.ColWidths[0]:=50; sgdLista.ColWidths[1]:=60;
   sgdLista.ColWidths[2]:=90; sgdLista.ColWidths[3]:=40;
   sgdLista.ColWidths[4]:=280; sgdLista.ColWidths[5]:=60;
@@ -83,7 +83,7 @@ begin
   sgdLista.Cells[4,0]:='Motivo'; sgdLista.Cells[5,0]:='Itens';
   { Grid itens }
   sgdItens.ColCount := 7; sgdItens.FixedRows := 1;
-  sgdItens.Options := sgdItens.Options + [goColSizing, goRowSelect];
+  //sgdItens.Options := sgdItens.Options + [goColSizing, goRowSelect];
   sgdItens.ColWidths[0]:=40; sgdItens.ColWidths[1]:=60;
   sgdItens.ColWidths[2]:=220; sgdItens.ColWidths[3]:=40;
   sgdItens.ColWidths[4]:=80; sgdItens.ColWidths[5]:=80;

@@ -94,7 +94,7 @@ begin
   FIDSelecionado := 0;
   FStatusAtual := '';
   { Grid lista }
-  sgdLista.ColCount := 8; sgdLista.FixedRows := 1;
+  sgdLista.ColCount := 8; //sgdLista.FixedRows := 1;
   sgdLista.Options := sgdLista.Options + [goColSizing, goRowSelect];
   sgdLista.ColWidths[0]:=50; sgdLista.ColWidths[1]:=60;
   sgdLista.ColWidths[2]:=220; sgdLista.ColWidths[3]:=90;
@@ -105,7 +105,7 @@ begin
   sgdLista.Cells[4,0]:='Previsão';   sgdLista.Cells[5,0]:='Total';
   sgdLista.Cells[6,0]:='Status';     sgdLista.Cells[7,0]:='NF';
   { Grid itens }
-  sgdItens.ColCount := 7; sgdItens.FixedRows := 1;
+  sgdItens.ColCount := 7; //sgdItens.FixedRows := 1;
   sgdItens.Options := sgdItens.Options + [goColSizing, goRowSelect];
   sgdItens.ColWidths[0]:=40; sgdItens.ColWidths[1]:=60;
   sgdItens.ColWidths[2]:=240; sgdItens.ColWidths[3]:=60;

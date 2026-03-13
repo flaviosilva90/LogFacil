@@ -52,7 +52,7 @@ uses uGlobal, uDMPrincipal;
 procedure TFrmMatPrimas.FormCreate(Sender: TObject);
 begin
   FIDSelecionado := 0;
-  sgdLista.ColCount := 7; sgdLista.FixedRows := 1;
+  sgdLista.ColCount := 7; //sgdLista.FixedRows := 1;
   sgdLista.Options := sgdLista.Options + [goColSizing, goRowSelect];
   sgdLista.ColWidths[0]:=50; sgdLista.ColWidths[1]:=100;
   sgdLista.ColWidths[2]:=220; sgdLista.ColWidths[3]:=60;

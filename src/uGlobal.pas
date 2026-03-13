@@ -155,7 +155,7 @@ begin Result := SessaoPerfil = PERFIL_ADMIN; end;
 
 function IsGerenteOuAdmin: Boolean;
 begin
-//  Result := SessaoPerfil in [PERFIL_ADMIN, PERFIL_GERENTE]
+  Result := (SessaoPerfil = PERFIL_ADMIN) or (SessaoPerfil = PERFIL_GERENTE);
 end;
 
 function CorStatus(const S: string): TColor;
