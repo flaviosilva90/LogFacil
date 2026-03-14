@@ -2,8 +2,8 @@ object FrmUsuarios: TFrmUsuarios
   Left = 0
   Top = 0
   Caption = 'Cadastro de Usu'#225'rios'
-  ClientHeight = 599
-  ClientWidth = 816
+  ClientHeight = 600
+  ClientWidth = 820
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object FrmUsuarios: TFrmUsuarios
   object pnlTopo: TPanel
     Left = 0
     Top = 0
-    Width = 816
+    Width = 820
     Height = 40
     Align = alTop
     BevelOuter = bvNone
@@ -39,7 +39,7 @@ object FrmUsuarios: TFrmUsuarios
   object pnlFiltro: TPanel
     Left = 0
     Top = 40
-    Width = 816
+    Width = 820
     Height = 44
     Align = alTop
     BevelOuter = bvNone
@@ -76,12 +76,11 @@ object FrmUsuarios: TFrmUsuarios
   object sgdLista: TStringGrid
     Left = 0
     Top = 84
-    Width = 816
+    Width = 820
     Height = 300
     Align = alTop
     ColCount = 6
     DefaultRowHeight = 22
-    DrawingStyle = gdsGradient
     RowCount = 2
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect]
     TabOrder = 2
@@ -90,7 +89,7 @@ object FrmUsuarios: TFrmUsuarios
   object pnlEdicao: TPanel
     Left = 0
     Top = 384
-    Width = 816
+    Width = 820
     Height = 216
     Align = alTop
     BevelOuter = bvNone

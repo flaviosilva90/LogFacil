@@ -6,7 +6,7 @@ uses
   Winapi.Windows, System.SysUtils, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.ComCtrls,
-  FireDAC.Comp.Client, System.Math, System.StrUtils;
+  FireDAC.Comp.Client, system.math, system.StrUtils;
 
 type
   TFrmFornecedores = class(TForm)

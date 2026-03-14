@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Classes,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.ComCtrls,
-  FireDAC.Comp.Client, system.Math, system.StrUtils;
+  FireDAC.Comp.Client, system.math, system.StrUtils;
 
 type
   TFrmVendas = class(TForm)
@@ -143,7 +143,7 @@ end;
 procedure TFrmVendas.PreencherGridLista(Qry: TFDQuery);
 var R: Integer;
 begin
-  sgdLista.RowCount:= Qry.RecordCount+1;
+  sgdLista.RowCount:=Qry.RecordCount+1;
   R:=1; Qry.First;
   while not Qry.Eof do
   begin
@@ -239,7 +239,7 @@ begin
   btnFaturar.Enabled    := EdicaoAtiva and (FStatusAtual=STV_CONFIRMADA);
   btnEntregar.Enabled   := EdicaoAtiva and (FStatusAtual=STV_FATURADA);
   btnCancelarDoc.Enabled:= EdicaoAtiva and ((FStatusAtual=STV_ORCAMENTO) or (FStatusAtual=STV_CONFIRMADA) or (FStatusAtual=STV_FATURADA));
-  edtClienteID.ReadOnly :=not(EhNovo) or (FStatusAtual=STV_ORCAMENTO);
+  edtClienteID.ReadOnly :=not((EhNovo) or (FStatusAtual=STV_ORCAMENTO));
   btnBuscarCli.Enabled  := EhNovo or (FStatusAtual=STV_ORCAMENTO);
   btnBuscarProd.Enabled := EhNovo or (FStatusAtual=STV_ORCAMENTO);
   btnAddItem.Enabled    := EhNovo or (FStatusAtual=STV_ORCAMENTO);

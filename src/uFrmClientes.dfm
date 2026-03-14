@@ -88,7 +88,6 @@ object FrmClientes: TFrmClientes
     Align = alTop
     ColCount = 7
     DefaultRowHeight = 22
-    DrawingStyle = gdsGradient
     RowCount = 2
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect]
     TabOrder = 2

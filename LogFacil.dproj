@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</ProjectGuid>
+    <ProjectGuid>{B3C4D5E6-F7A8-9012-BCDE-F01234567890}</ProjectGuid>
     <MainSource>LogFacil.dpr</MainSource>
     <Base>True</Base>
     <Config Condition="'$(Config)'==''">Debug</Config>
@@ -44,43 +44,25 @@
     <DelphiCompile Include="LogFacil.dpr">
       <MainSource>MainSource</MainSource>
     </DelphiCompile>
-    <DCCReference Include="src\uDMPrincipal.pas">
-      <Form>DMPrincipal</Form>
-    </DCCReference>
+    <DCCReference Include="src\uDMPrincipal.pas"><Form>DMPrincipal</Form></DCCReference>
     <DCCReference Include="src\uGlobal.pas"/>
-    <DCCReference Include="src\uFrmLogin.pas">
-      <Form>FrmLogin</Form>
-    </DCCReference>
-    <DCCReference Include="src\uFrmPrincipal.pas">
-      <Form>FrmPrincipal</Form>
-    </DCCReference>
-    <DCCReference Include="src\uFrmUsuarios.pas">
-      <Form>FrmUsuarios</Form>
-    </DCCReference>
-    <DCCReference Include="src\uFrmClientes.pas">
-      <Form>FrmClientes</Form>
-    </DCCReference>
-    <DCCReference Include="src\uFrmFornecedores.pas">
-      <Form>FrmFornecedores</Form>
-    </DCCReference>
-    <DCCReference Include="src\uFrmMatPrimas.pas">
-      <Form>FrmMatPrimas</Form>
-    </DCCReference>
-    <DCCReference Include="src\uFrmProdutos.pas">
-      <Form>FrmProdutos</Form>
-    </DCCReference>
-    <DCCReference Include="src\uFrmCompras.pas">
-      <Form>FrmCompras</Form>
-    </DCCReference>
-    <DCCReference Include="src\uFrmVendas.pas">
-      <Form>FrmVendas</Form>
-    </DCCReference>
-    <DCCReference Include="src\uFrmEstoque.pas">
-      <Form>FrmEstoque</Form>
-    </DCCReference>
-    <DCCReference Include="src\uFrmAjusteEstoque.pas">
-      <Form>FrmAjusteEstoque</Form>
-    </DCCReference>
+    <DCCReference Include="src\uFrmLogin.pas"><Form>FrmLogin</Form></DCCReference>
+    <DCCReference Include="src\uFrmPrincipal.pas"><Form>FrmPrincipal</Form></DCCReference>
+    <DCCReference Include="src\uFrmUsuarios.pas"><Form>FrmUsuarios</Form></DCCReference>
+    <DCCReference Include="src\uFrmClientes.pas"><Form>FrmClientes</Form></DCCReference>
+    <DCCReference Include="src\uFrmFornecedores.pas"><Form>FrmFornecedores</Form></DCCReference>
+    <DCCReference Include="src\uFrmMatPrimas.pas"><Form>FrmMatPrimas</Form></DCCReference>
+    <DCCReference Include="src\uFrmProdutos.pas"><Form>FrmProdutos</Form></DCCReference>
+    <DCCReference Include="src\uFrmOrcamentos.pas"><Form>FrmOrcamentos</Form></DCCReference>
+    <DCCReference Include="src\uFrmCompras.pas"><Form>FrmCompras</Form></DCCReference>
+    <DCCReference Include="src\uFrmVendas.pas"><Form>FrmVendas</Form></DCCReference>
+    <DCCReference Include="src\uFrmImportNFXML.pas"><Form>FrmImportNFXML</Form></DCCReference>
+    <DCCReference Include="src\uFrmNFSaida.pas"><Form>FrmNFSaida</Form></DCCReference>
+    <DCCReference Include="src\uFrmEstoque.pas"><Form>FrmEstoque</Form></DCCReference>
+    <DCCReference Include="src\uFrmAjusteEstoque.pas"><Form>FrmAjusteEstoque</Form></DCCReference>
+    <DCCReference Include="src\uFrmContasPagar.pas"><Form>FrmContasPagar</Form></DCCReference>
+    <DCCReference Include="src\uFrmContasReceber.pas"><Form>FrmContasReceber</Form></DCCReference>
+    <DCCReference Include="src\uFrmFluxoCaixa.pas"><Form>FrmFluxoCaixa</Form></DCCReference>
   </ItemGroup>
   <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
   <Import Project="$(APPDATA)\Embarcadero\Studio\22.0\EnvOptions.proj" Condition="Exists('$(APPDATA)\Embarcadero\Studio\22.0\EnvOptions.proj')"/>

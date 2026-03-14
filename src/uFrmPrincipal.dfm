@@ -1,9 +1,9 @@
 object FrmPrincipal: TFrmPrincipal
   Left = 0
   Top = 0
-  Caption = 'LogF'#225'cil - Sistema ERP'
-  ClientHeight = 599
-  ClientWidth = 896
+  Caption = 'LogF'#225'cil ERP v3.0'
+  ClientHeight = 600
+  ClientWidth = 1000
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,27 +11,22 @@ object FrmPrincipal: TFrmPrincipal
   Font.Name = 'Segoe UI'
   Font.Style = []
   Menu = MainMenu
-  WindowState = wsMaximized
   OnClose = FormClose
   OnCreate = FormCreate
-  TextHeight = 17
+  WindowState = wsMaximized
   object pnlTopo: TPanel
     Left = 0
     Top = 0
-    Width = 896
+    Width = 1000
     Height = 48
     Align = alTop
     BevelOuter = bvNone
-    Color = 10040064
+    Color = $00993300
     TabOrder = 0
-    ExplicitWidth = 900
     object lblBemVindo: TLabel
       Left = 16
       Top = 14
-      Width = 78
-      Height = 19
       Caption = 'Bem-vindo,'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
       Font.Height = -14
       Font.Name = 'Segoe UI'
@@ -39,36 +34,30 @@ object FrmPrincipal: TFrmPrincipal
       ParentFont = False
     end
     object lblPerfil: TLabel
-      Left = 200
+      Left = 240
       Top = 16
-      Width = 101
-      Height = 15
       Caption = '[ADMINISTRADOR]'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = 16764057
+      Font.Color = $00FFCC99
       Font.Height = -12
       Font.Name = 'Segoe UI'
-      Font.Style = []
       ParentFont = False
     end
   end
   object StatusBar: TStatusBar
     Left = 0
-    Top = 577
-    Width = 896
+    Top = 578
+    Width = 1000
     Height = 22
     Panels = <
       item
-        Width = 200
+        Width = 220
       end
       item
-        Width = 200
+        Width = 220
       end
       item
         Width = 200
       end>
-    ExplicitTop = 578
-    ExplicitWidth = 900
   end
   object MainMenu: TMainMenu
     object mnuCadastros: TMenuItem
@@ -102,13 +91,28 @@ object FrmPrincipal: TFrmPrincipal
     end
     object mnuMovimentos: TMenuItem
       Caption = '&Movimentos'
-      object mnuCompras: TMenuItem
-        Caption = '&Compras de Mat. Prima'
-        OnClick = mnuComprasClick
+      object mnuOrcamentos: TMenuItem
+        Caption = '&Or'#231'amentos de Venda'
+        OnClick = mnuOrcamentosClick
       end
       object mnuVendas: TMenuItem
         Caption = '&Vendas de Produtos'
         OnClick = mnuVendasClick
+      end
+      object mnuCompras: TMenuItem
+        Caption = '&Compras de Mat. Prima'
+        OnClick = mnuComprasClick
+      end
+      object sep3: TMenuItem
+        Caption = '-'
+      end
+      object mnuImportNFXML: TMenuItem
+        Caption = 'Importar NF-e &XML (Entrada)'
+        OnClick = mnuImportNFXMLClick
+      end
+      object mnuNFSaida: TMenuItem
+        Caption = 'Emitir &NF-e (Sa'#237'da)'
+        OnClick = mnuNFSaidaClick
       end
     end
     object mnuEstoque: TMenuItem
@@ -126,6 +130,24 @@ object FrmPrincipal: TFrmPrincipal
         OnClick = mnuAjusteClick
       end
     end
+    object mnuFinanceiro: TMenuItem
+      Caption = '&Financeiro'
+      object mnuContasPagar: TMenuItem
+        Caption = 'Contas a &Pagar'
+        OnClick = mnuContasPagarClick
+      end
+      object mnuContasReceber: TMenuItem
+        Caption = 'Contas a &Receber'
+        OnClick = mnuContasReceberClick
+      end
+      object sep4: TMenuItem
+        Caption = '-'
+      end
+      object mnuFluxoCaixa: TMenuItem
+        Caption = '&Fluxo de Caixa'
+        OnClick = mnuFluxoCaixaClick
+      end
+    end
     object mnuSistema: TMenuItem
       Caption = '&Sistema'
       object mnuSair: TMenuItem
@@ -135,6 +157,7 @@ object FrmPrincipal: TFrmPrincipal
     end
   end
   object tmrRelogio: TTimer
+    Interval = 1000
     OnTimer = tmrRelogioTimer
     Left = 20
     Top = 60

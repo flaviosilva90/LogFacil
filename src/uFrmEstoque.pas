@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Classes,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.ComCtrls,
-  FireDAC.Comp.Client, system.Math, system.StrUtils;
+  FireDAC.Comp.Client, system.math, system.StrUtils;
 
 type
   TFrmEstoque = class(TForm)

@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Classes,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids,
-  FireDAC.Comp.Client, System.StrUtils, System.Math;
+  FireDAC.Comp.Client, system.math, system.StrUtils;
 
 type
   TFrmProdutos = class(TForm)
@@ -151,13 +151,9 @@ begin
     Margem := ((Venda - Custo) / Custo) * 100
   else Margem := 0;
   lblMargemVal.Caption := FormatFloat('0.00', Margem) + '%';
-
-{  if Margem < 0 then
-    lblMargemVal.Font.Color := clRed
-  else if Margem < 10 then
-    lblMargemVal.Font.Color := clOlive
-  else
-    lblMargemVal.Font.Color := clGreen; }
+  {if Margem < 0 then lblMargemVal.Font.Color := clRed
+  else if Margem < 10 then lblMargemVal.Font.Color := clOlive
+  else lblMargemVal.Font.Color := clGreen;}
 end;
 
 procedure TFrmProdutos.edtPrecoVendaChange(Sender: TObject);

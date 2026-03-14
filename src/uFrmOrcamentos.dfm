@@ -1,0 +1,479 @@
+object FrmOrcamentos: TFrmOrcamentos
+  Left = 0
+  Top = 0
+  Caption = 'Or'#231'amentos de Venda'
+  ClientHeight = 740
+  ClientWidth = 960
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poOwnerFormCenter
+  OnCreate = FormCreate
+  TextHeight = 17
+  object pnlTopo: TPanel
+    Left = 0
+    Top = 0
+    Width = 960
+    Height = 40
+    Align = alTop
+    BevelOuter = bvNone
+    Color = 10040064
+    TabOrder = 0
+    object lblTitulo: TLabel
+      Left = 12
+      Top = 10
+      Width = 168
+      Height = 19
+      Caption = 'OR'#199'AMENTOS DE VENDA'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -14
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object pnlFiltro: TPanel
+    Left = 0
+    Top = 40
+    Width = 960
+    Height = 44
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 1
+    object edtFiltro: TEdit
+      Left = 8
+      Top = 10
+      Width = 220
+      Height = 25
+      TabOrder = 0
+    end
+    object cboStatus: TComboBox
+      Left = 240
+      Top = 10
+      Width = 130
+      Height = 25
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object btnBuscar: TButton
+      Left = 382
+      Top = 9
+      Width = 80
+      Height = 27
+      Caption = 'Buscar'
+      TabOrder = 2
+      OnClick = btnBuscarClick
+    end
+    object btnNovo: TButton
+      Left = 470
+      Top = 9
+      Width = 80
+      Height = 27
+      Caption = 'Novo'
+      TabOrder = 3
+      OnClick = btnNovoClick
+    end
+  end
+  object sgdLista: TStringGrid
+    Left = 0
+    Top = 84
+    Width = 960
+    Height = 180
+    Align = alTop
+    ColCount = 8
+    DefaultRowHeight = 22
+    RowCount = 2
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect]
+    TabOrder = 2
+    OnClick = sgdListaClick
+  end
+  object pnlEdicao: TPanel
+    Left = 0
+    Top = 264
+    Width = 960
+    Height = 476
+    Align = alTop
+    BevelOuter = bvNone
+    Color = 16448250
+    TabOrder = 3
+    Visible = False
+    object lblNumero: TLabel
+      Left = 8
+      Top = 8
+      Width = 48
+      Height = 17
+      Caption = 'N'#250'mero'
+    end
+    object lblCliente: TLabel
+      Left = 110
+      Top = 8
+      Width = 51
+      Height = 17
+      Caption = 'Cliente: *'
+    end
+    object lblEmissao: TLabel
+      Left = 496
+      Top = 8
+      Width = 48
+      Height = 17
+      Caption = 'Emiss'#227'o'
+    end
+    object lblValidade: TLabel
+      Left = 618
+      Top = 8
+      Width = 50
+      Height = 17
+      Caption = 'Validade'
+    end
+    object lblStatus: TLabel
+      Left = 740
+      Top = 8
+      Width = 35
+      Height = 17
+      Caption = 'Status'
+    end
+    object lblCondPagto: TLabel
+      Left = 8
+      Top = 62
+      Width = 104
+      Height = 17
+      Caption = 'Cond. Pagamento'
+    end
+    object lblObs: TLabel
+      Left = 220
+      Top = 62
+      Width = 24
+      Height = 17
+      Caption = 'Obs'
+    end
+    object lblItens: TLabel
+      Left = 8
+      Top = 138
+      Width = 126
+      Height = 17
+      Caption = 'Itens do Or'#231'amento:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object edtNumero: TEdit
+      Left = 8
+      Top = 26
+      Width = 90
+      Height = 25
+      Color = clBtnFace
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object edtClienteID: TEdit
+      Left = 110
+      Top = 26
+      Width = 55
+      Height = 25
+      TabOrder = 1
+    end
+    object edtClienteNome: TEdit
+      Left = 170
+      Top = 26
+      Width = 280
+      Height = 25
+      Color = clBtnFace
+      ReadOnly = True
+      TabOrder = 2
+    end
+    object btnBuscarCli: TButton
+      Left = 456
+      Top = 25
+      Width = 28
+      Height = 27
+      Caption = '...'
+      TabOrder = 3
+      OnClick = btnBuscarCliClick
+    end
+    object edtEmissao: TDateTimePicker
+      Left = 496
+      Top = 26
+      Width = 110
+      Height = 25
+      Date = 46094.000000000000000000
+      Time = 0.920938877316075400
+      TabOrder = 4
+    end
+    object edtValidade: TDateTimePicker
+      Left = 618
+      Top = 26
+      Width = 110
+      Height = 25
+      Date = 46094.000000000000000000
+      Time = 0.920938877316075400
+      TabOrder = 5
+    end
+    object edtStatusLabel: TEdit
+      Left = 740
+      Top = 26
+      Width = 120
+      Height = 25
+      Color = clBtnFace
+      ReadOnly = True
+      TabOrder = 6
+    end
+    object edtCondPagto: TEdit
+      Left = 8
+      Top = 80
+      Width = 200
+      Height = 25
+      TabOrder = 7
+    end
+    object mmoObs: TMemo
+      Left = 220
+      Top = 80
+      Width = 620
+      Height = 48
+      TabOrder = 8
+    end
+    object sgdItens: TStringGrid
+      Left = 0
+      Top = 156
+      Width = 960
+      Height = 130
+      ColCount = 7
+      DefaultRowHeight = 22
+      RowCount = 2
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect]
+      TabOrder = 9
+    end
+    object pnlAddItem: TPanel
+      Left = 0
+      Top = 286
+      Width = 960
+      Height = 36
+      BevelOuter = bvNone
+      Color = 15660287
+      TabOrder = 10
+      object lblAddProd: TLabel
+        Left = 8
+        Top = 10
+        Width = 47
+        Height = 17
+        Caption = 'ID Prod:'
+      end
+      object lblAddQtd: TLabel
+        Left = 388
+        Top = 10
+        Width = 25
+        Height = 17
+        Caption = 'Qtd:'
+      end
+      object lblAddVlUnit: TLabel
+        Left = 502
+        Top = 10
+        Width = 40
+        Height = 17
+        Caption = 'Vl.Unit:'
+      end
+      object lblAddDesc: TLabel
+        Left = 646
+        Top = 10
+        Width = 31
+        Height = 17
+        Caption = 'Desc:'
+      end
+      object edtAddProdID: TEdit
+        Left = 56
+        Top = 6
+        Width = 55
+        Height = 25
+        TabOrder = 0
+      end
+      object edtAddProdNome: TEdit
+        Left = 116
+        Top = 6
+        Width = 230
+        Height = 25
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object btnBuscarProd: TButton
+        Left = 352
+        Top = 5
+        Width = 28
+        Height = 27
+        Caption = '...'
+        TabOrder = 2
+        OnClick = btnBuscarProdClick
+      end
+      object edtAddQtd: TEdit
+        Left = 414
+        Top = 6
+        Width = 80
+        Height = 25
+        TabOrder = 3
+        Text = '1,000'
+      end
+      object edtAddVlUnit: TEdit
+        Left = 548
+        Top = 6
+        Width = 90
+        Height = 25
+        TabOrder = 4
+        Text = '0,00'
+      end
+      object edtAddDesc: TEdit
+        Left = 678
+        Top = 6
+        Width = 80
+        Height = 25
+        TabOrder = 5
+        Text = '0,00'
+      end
+      object btnAddItem: TButton
+        Left = 766
+        Top = 5
+        Width = 80
+        Height = 27
+        Caption = '+ Item'
+        TabOrder = 6
+        OnClick = btnAddItemClick
+      end
+      object btnRemItem: TButton
+        Left = 852
+        Top = 5
+        Width = 80
+        Height = 27
+        Caption = '- Remover'
+        TabOrder = 7
+        OnClick = btnRemItemClick
+      end
+    end
+    object pnlTotais: TPanel
+      Left = 640
+      Top = 328
+      Width = 316
+      Height = 70
+      BevelOuter = bvNone
+      Color = 16448250
+      TabOrder = 11
+      object lblFrete: TLabel
+        Left = 8
+        Top = 6
+        Width = 32
+        Height = 17
+        Caption = 'Frete:'
+      end
+      object lblDescGlobal: TLabel
+        Left = 168
+        Top = 6
+        Width = 58
+        Height = 17
+        Caption = 'Desconto:'
+      end
+      object lblTotalLabel: TLabel
+        Left = 8
+        Top = 38
+        Width = 44
+        Height = 17
+        Caption = 'TOTAL:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object edtFrete: TEdit
+        Left = 60
+        Top = 2
+        Width = 100
+        Height = 25
+        TabOrder = 0
+        Text = '0,00'
+        OnChange = edtFreteChange
+      end
+      object edtDescGlobal: TEdit
+        Left = 228
+        Top = 2
+        Width = 80
+        Height = 25
+        TabOrder = 1
+        Text = '0,00'
+        OnChange = edtDescGlobalChange
+      end
+      object edtTotal: TEdit
+        Left = 60
+        Top = 34
+        Width = 120
+        Height = 25
+        Color = clBtnFace
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 2
+      end
+    end
+    object pnlBotoes: TPanel
+      Left = 0
+      Top = 404
+      Width = 960
+      Height = 44
+      BevelOuter = bvNone
+      Color = 15263976
+      TabOrder = 12
+      object btnSalvar: TButton
+        Left = 8
+        Top = 8
+        Width = 100
+        Height = 30
+        Caption = 'Salvar'
+        TabOrder = 0
+        OnClick = btnSalvarClick
+      end
+      object btnConverter: TButton
+        Left = 116
+        Top = 8
+        Width = 140
+        Height = 30
+        Caption = 'Converter em Venda'
+        Enabled = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 1
+        OnClick = btnConverterClick
+      end
+      object btnCancelarDoc: TButton
+        Left = 264
+        Top = 8
+        Width = 100
+        Height = 30
+        Caption = 'Cancelar'
+        Enabled = False
+        TabOrder = 2
+        OnClick = btnCancelarDocClick
+      end
+      object btnFechar: TButton
+        Left = 372
+        Top = 8
+        Width = 100
+        Height = 30
+        Caption = 'Fechar'
+        TabOrder = 3
+        OnClick = btnFecharClick
+      end
+    end
+  end
+end

@@ -172,7 +172,7 @@ object FrmAjusteEstoque: TFrmAjusteEstoque
       Width = 120
       Height = 25
       Date = 46094.000000000000000000
-      Time = 0.793620601849397600
+      Time = 0.937509965275239700
       TabOrder = 1
     end
     object cboTipoEstEd: TComboBox

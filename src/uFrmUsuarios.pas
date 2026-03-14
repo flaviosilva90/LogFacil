@@ -55,7 +55,7 @@ begin
   { Configura grid }
   sgdLista.ColCount := 6;
   sgdLista.RowCount := 1;
-  //sgdLista.FixedRows := 0;
+  //sgdLista.FixedRows := 1;
   sgdLista.Options := sgdLista.Options + [goColSizing, goRowSelect];
   sgdLista.ColWidths[0] := 50;
   sgdLista.ColWidths[1] := 200;

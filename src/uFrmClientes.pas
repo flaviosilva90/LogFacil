@@ -7,7 +7,7 @@ uses
   System.SysUtils, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.ComCtrls,
-  FireDAC.Comp.Client, System.StrUtils, System.Math;
+  FireDAC.Comp.Client, system.Math, system.StrUtils;
 
 type
   TFrmClientes = class(TForm)

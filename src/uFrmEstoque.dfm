@@ -92,7 +92,6 @@ object FrmEstoque: TFrmEstoque
         Align = alClient
         ColCount = 9
         DefaultRowHeight = 22
-        DrawingStyle = gdsGradient
         RowCount = 2
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect]
         TabOrder = 1
@@ -152,7 +151,7 @@ object FrmEstoque: TFrmEstoque
       object pnlFiltroHist: TPanel
         Left = 0
         Top = 0
-        Width = 952
+        Width = 940
         Height = 44
         Align = alTop
         BevelOuter = bvNone
@@ -177,7 +176,7 @@ object FrmEstoque: TFrmEstoque
           Width = 110
           Height = 25
           Date = 46094.000000000000000000
-          Time = 0.813809710649366000
+          Time = 0.926484837960742900
           TabOrder = 0
         end
         object edtAte: TDateTimePicker
@@ -186,7 +185,7 @@ object FrmEstoque: TFrmEstoque
           Width = 110
           Height = 25
           Date = 46094.000000000000000000
-          Time = 0.813809710649366000
+          Time = 0.926484837960742900
           TabOrder = 1
         end
         object edtFiltroItem: TEdit
@@ -223,10 +222,11 @@ object FrmEstoque: TFrmEstoque
         Align = alClient
         ColCount = 8
         DefaultRowHeight = 22
-        DrawingStyle = gdsGradient
         RowCount = 2
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect]
         TabOrder = 1
+        ExplicitWidth = 940
+        ExplicitHeight = 510
       end
     end
   end

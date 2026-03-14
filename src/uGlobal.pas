@@ -15,7 +15,7 @@ uses
 const
   { ── Aplicação ── }
   APP_NOME   = 'LogFácil';
-  APP_VERSAO = '2.0.0';
+  APP_VERSAO = '3.0.0';
 
   { ── Banco de dados (ajuste conforme ambiente) ── }
   DB_HOST     = 'localhost';
@@ -47,6 +47,27 @@ const
   TMOV_ENTRADA = 'E';
   TMOV_SAIDA   = 'S';
   TMOV_AJUSTE  = 'A';
+
+  { ── Status Orçamento ── }
+  STO_ABERTO     = 'ABERTO';
+  STO_CONVERTIDO = 'CONVERTIDO';
+  STO_EXPIRADO   = 'EXPIRADO';
+  STO_CANCELADO  = 'CANCELADO';
+
+  { ── Status NF-e ── }
+  STNF_DIGITACAO  = 'DIGITACAO';
+  STNF_VALIDADA   = 'VALIDADA';
+  STNF_AUTORIZADA = 'AUTORIZADA';
+  STNF_CANCELADA  = 'CANCELADA';
+
+  { ── Status Contas ── }
+  STCP_ABERTA         = 'ABERTA';
+  STCP_PAGA           = 'PAGA';
+  STCP_PAGA_PARCIAL   = 'PAGA_PARCIAL';
+  STCR_RECEBIDA       = 'RECEBIDA';
+  STCR_RECEB_PARC     = 'RECEBIDA_PARCIAL';
+  STCX_VENCIDA        = 'VENCIDA';
+  STCX_CANCELADA      = 'CANCELADA';
 
   { ── Mensagens comuns ── }
   MSG_SALVO         = 'Registro salvo com sucesso!';
@@ -154,9 +175,7 @@ function IsAdmin: Boolean;
 begin Result := SessaoPerfil = PERFIL_ADMIN; end;
 
 function IsGerenteOuAdmin: Boolean;
-begin
-  Result := (SessaoPerfil = PERFIL_ADMIN) or (SessaoPerfil = PERFIL_GERENTE);
-end;
+begin Result := (SessaoPerfil = PERFIL_ADMIN) or (SessaoPerfil =PERFIL_GERENTE); end;
 
 function CorStatus(const S: string): TColor;
 begin

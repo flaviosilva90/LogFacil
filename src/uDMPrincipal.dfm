@@ -5,10 +5,11 @@ object DMPrincipal: TDMPrincipal
   Width = 400
   object Conn: TFDConnection
     Params.Strings = (
-      'Database=C:\LogFacil\LOGFACIL.FDB'
-      'User_Name=SYSDBA'
+      'User_Name=sysdba'
       'Password=masterkey'
       'Server=localhost'
+      'CharacterSet=UTF8'
+      'Database=C:\LogFacil\LOGFACIL.FDB'
       'DriverID=FB')
     LoginPrompt = False
     Left = 56

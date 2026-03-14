@@ -88,7 +88,6 @@ object FrmProdutos: TFrmProdutos
     Align = alTop
     ColCount = 8
     DefaultRowHeight = 22
-    DrawingStyle = gdsGradient
     RowCount = 2
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect]
     TabOrder = 2

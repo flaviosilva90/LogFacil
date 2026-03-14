@@ -17,7 +17,7 @@ uses
   FireDAC.VCLUI.Wait, FireDAC.Comp.Client,
   FireDAC.Phys.FB, FireDAC.Phys.FBDef,
   FireDAC.Stan.ExprFuncs, FireDAC.Comp.UI,
-  Data.DB, FireDAC.DApt;
+  Data.DB, firedac.DApt;
 
 type
   TDMPrincipal = class(TDataModule)

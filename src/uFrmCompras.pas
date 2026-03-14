@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Classes,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.ComCtrls,
-  FireDAC.Comp.Client, system.Math, system.StrUtils;
+  FireDAC.Comp.Client, system.math, system.StrUtils;
 
 type
   TFrmCompras = class(TForm)
@@ -253,9 +253,9 @@ begin
   btnReceber.Enabled     := EdicaoAtiva and (FStatusAtual=STC_CONFIRMADA);
   btnCancelarDoc.Enabled := EdicaoAtiva and ((FStatusAtual=STC_PENDENTE) or (FStatusAtual=STC_CONFIRMADA));
   { Campos editáveis somente em PENDENTE ou novo }
-  edtFornecID.ReadOnly   := not(EhNovo) or (FStatusAtual=STC_PENDENTE);
-  edtFornecNome.ReadOnly := not(EhNovo) or (FStatusAtual=STC_PENDENTE);
-  edtAddMPID.ReadOnly    := not(EhNovo) or (FStatusAtual=STC_PENDENTE);
+  edtFornecID.ReadOnly   := not((EhNovo) or (FStatusAtual=STC_PENDENTE));
+  edtFornecNome.ReadOnly := not((EhNovo) or (FStatusAtual=STC_PENDENTE));
+  edtAddMPID.ReadOnly    := not((EhNovo) or (FStatusAtual=STC_PENDENTE));
   btnBuscarMP.Enabled    := EhNovo or (FStatusAtual=STC_PENDENTE);
   btnAddItem.Enabled     := EhNovo or (FStatusAtual=STC_PENDENTE);
   btnRemItem.Enabled     := EhNovo or (FStatusAtual=STC_PENDENTE);

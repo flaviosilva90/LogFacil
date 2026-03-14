@@ -1,4 +1,4 @@
-﻿unit uFrmPrincipal;
+unit uFrmPrincipal;
 
 interface
 
@@ -13,17 +13,28 @@ type
     MainMenu: TMainMenu;
     mnuCadastros: TMenuItem;
     mnuUsuarios: TMenuItem;
+    sep1: TMenuItem;
     mnuClientes: TMenuItem;
     mnuFornecedores: TMenuItem;
+    sep2: TMenuItem;
     mnuMatPrimas: TMenuItem;
     mnuProdutos: TMenuItem;
     mnuMovimentos: TMenuItem;
+    mnuOrcamentos: TMenuItem;
     mnuCompras: TMenuItem;
     mnuVendas: TMenuItem;
+    sep3: TMenuItem;
+    mnuImportNFXML: TMenuItem;
+    mnuNFSaida: TMenuItem;
     mnuEstoque: TMenuItem;
     mnuEstoqueProd: TMenuItem;
     mnuEstoqueMP: TMenuItem;
     mnuAjuste: TMenuItem;
+    mnuFinanceiro: TMenuItem;
+    mnuContasPagar: TMenuItem;
+    mnuContasReceber: TMenuItem;
+    sep4: TMenuItem;
+    mnuFluxoCaixa: TMenuItem;
     mnuSistema: TMenuItem;
     mnuSair: TMenuItem;
     StatusBar: TStatusBar;
@@ -31,8 +42,6 @@ type
     pnlTopo: TPanel;
     lblBemVindo: TLabel;
     lblPerfil: TLabel;
-    sep1: TMenuItem;
-    sep2: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure tmrRelogioTimer(Sender: TObject);
@@ -41,11 +50,17 @@ type
     procedure mnuFornecedoresClick(Sender: TObject);
     procedure mnuMatPrimasClick(Sender: TObject);
     procedure mnuProdutosClick(Sender: TObject);
+    procedure mnuOrcamentosClick(Sender: TObject);
     procedure mnuComprasClick(Sender: TObject);
     procedure mnuVendasClick(Sender: TObject);
+    procedure mnuImportNFXMLClick(Sender: TObject);
+    procedure mnuNFSaidaClick(Sender: TObject);
     procedure mnuEstoqueProdClick(Sender: TObject);
     procedure mnuEstoqueMPClick(Sender: TObject);
     procedure mnuAjusteClick(Sender: TObject);
+    procedure mnuContasPagarClick(Sender: TObject);
+    procedure mnuContasReceberClick(Sender: TObject);
+    procedure mnuFluxoCaixaClick(Sender: TObject);
     procedure mnuSairClick(Sender: TObject);
   end;
 
@@ -60,19 +75,20 @@ uses
   uGlobal,
   uFrmUsuarios, uFrmClientes, uFrmFornecedores,
   uFrmMatPrimas, uFrmProdutos,
-  uFrmCompras, uFrmVendas,
-  uFrmEstoque,// uFrmAjusteEstoque,
+  uFrmOrcamentos, uFrmCompras, uFrmVendas,
+  uFrmImportNFXML, uFrmNFSaida,
+  uFrmEstoque, uFrmAjusteEstoque,
+  uFrmContasPagar, uFrmContasReceber, uFrmFluxoCaixa,
   uFrmLogin;
 
 procedure TFrmPrincipal.FormCreate(Sender: TObject);
 begin
-  Caption := APP_NOME + ' - Sistema ERP';
+  Caption := APP_NOME + ' - Sistema ERP v' + APP_VERSAO;
   lblBemVindo.Caption := 'Bem-vindo, ' + SessaoNome;
   lblPerfil.Caption   := '[' + SessaoPerfil + ']';
-  { Usuários visível somente para admin }
   mnuUsuarios.Visible := IsAdmin;
   StatusBar.Panels[0].Text := ' ' + APP_NOME + ' v' + APP_VERSAO;
-  StatusBar.Panels[1].Text := ' Usuário: ' + SessaoLogin;
+  StatusBar.Panels[1].Text := ' Usuario: ' + SessaoLogin;
   tmrRelogio.Enabled := True;
 end;
 
@@ -88,74 +104,38 @@ begin
 end;
 
 procedure TFrmPrincipal.mnuUsuariosClick(Sender: TObject);
-begin
-  with TFrmUsuarios.Create(Self) do
-  try ShowModal; finally Free; end;
-end;
-
+begin with TFrmUsuarios.Create(Self) do try ShowModal; finally Free; end; end;
 procedure TFrmPrincipal.mnuClientesClick(Sender: TObject);
-begin
-  with TFrmClientes.Create(Self) do
-  try ShowModal; finally Free; end;
-end;
-
+begin with TFrmClientes.Create(Self) do try ShowModal; finally Free; end; end;
 procedure TFrmPrincipal.mnuFornecedoresClick(Sender: TObject);
-begin
-  with TFrmFornecedores.Create(Self) do
-  try ShowModal; finally Free; end;
-end;
-
+begin with TFrmFornecedores.Create(Self) do try ShowModal; finally Free; end; end;
 procedure TFrmPrincipal.mnuMatPrimasClick(Sender: TObject);
-begin
-  with TFrmMatPrimas.Create(Self) do
-  try ShowModal; finally Free; end;
-end;
-
+begin with TFrmMatPrimas.Create(Self) do try ShowModal; finally Free; end; end;
 procedure TFrmPrincipal.mnuProdutosClick(Sender: TObject);
-begin
-  with TFrmProdutos.Create(Self) do
-  try ShowModal; finally Free; end;
-end;
-
+begin with TFrmProdutos.Create(Self) do try ShowModal; finally Free; end; end;
+procedure TFrmPrincipal.mnuOrcamentosClick(Sender: TObject);
+begin with TFrmOrcamentos.Create(Self) do try ShowModal; finally Free; end; end;
 procedure TFrmPrincipal.mnuComprasClick(Sender: TObject);
-begin
-  with TFrmCompras.Create(Self) do
-  try ShowModal; finally Free; end;
-end;
-
+begin with TFrmCompras.Create(Self) do try ShowModal; finally Free; end; end;
 procedure TFrmPrincipal.mnuVendasClick(Sender: TObject);
-begin
-  with TFrmVendas.Create(Self) do
-  try ShowModal; finally Free; end;
-end;
-
+begin with TFrmVendas.Create(Self) do try ShowModal; finally Free; end; end;
+procedure TFrmPrincipal.mnuImportNFXMLClick(Sender: TObject);
+begin with TFrmImportNFXML.Create(Self) do try ShowModal; finally Free; end; end;
+procedure TFrmPrincipal.mnuNFSaidaClick(Sender: TObject);
+begin with TFrmNFSaida.Create(Self) do try ShowModal; finally Free; end; end;
 procedure TFrmPrincipal.mnuEstoqueProdClick(Sender: TObject);
-begin
-  with TFrmEstoque.Create(Self) do
-  begin
-    TipoEstoque := 'P';
-    try ShowModal; finally Free; end;
-  end;
-end;
-
+begin with TFrmEstoque.Create(Self) do begin TipoEstoque:='P'; try ShowModal; finally Free; end; end; end;
 procedure TFrmPrincipal.mnuEstoqueMPClick(Sender: TObject);
-begin
-  with TFrmEstoque.Create(Self) do
-  begin
-    TipoEstoque := 'M';
-    try ShowModal; finally Free; end;
-  end;
-end;
-
+begin with TFrmEstoque.Create(Self) do begin TipoEstoque:='M'; try ShowModal; finally Free; end; end; end;
 procedure TFrmPrincipal.mnuAjusteClick(Sender: TObject);
-begin
- // with TFrmAjusteEstoque.Create(Self) do
- // try ShowModal; finally Free; end;
-end;
-
+begin with TFrmAjusteEstoque.Create(Self) do try ShowModal; finally Free; end; end;
+procedure TFrmPrincipal.mnuContasPagarClick(Sender: TObject);
+begin with TFrmContasPagar.Create(Self) do try ShowModal; finally Free; end; end;
+procedure TFrmPrincipal.mnuContasReceberClick(Sender: TObject);
+begin with TFrmContasReceber.Create(Self) do try ShowModal; finally Free; end; end;
+procedure TFrmPrincipal.mnuFluxoCaixaClick(Sender: TObject);
+begin with TFrmFluxoCaixa.Create(Self) do try ShowModal; finally Free; end; end;
 procedure TFrmPrincipal.mnuSairClick(Sender: TObject);
-begin
-  Close;
-end;
+begin Close; end;
 
 end.

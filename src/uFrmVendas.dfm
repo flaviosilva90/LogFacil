@@ -86,7 +86,6 @@ object FrmVendas: TFrmVendas
     Align = alTop
     ColCount = 8
     DefaultRowHeight = 22
-    DrawingStyle = gdsGradient
     RowCount = 2
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect]
     TabOrder = 2
@@ -211,7 +210,7 @@ object FrmVendas: TFrmVendas
       Width = 110
       Height = 25
       Date = 46094.000000000000000000
-      Time = 0.813651041666162200
+      Time = 0.923355856481066400
       TabOrder = 4
     end
     object edtEntrega: TDateTimePicker
@@ -220,7 +219,7 @@ object FrmVendas: TFrmVendas
       Width = 110
       Height = 25
       Date = 46094.000000000000000000
-      Time = 0.813651041666162200
+      Time = 0.923355856481066400
       TabOrder = 5
     end
     object edtStatusLabel: TEdit
@@ -260,7 +259,6 @@ object FrmVendas: TFrmVendas
       Height = 130
       ColCount = 7
       DefaultRowHeight = 22
-      DrawingStyle = gdsGradient
       RowCount = 2
       Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect]
       TabOrder = 10
